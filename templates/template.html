@@ -45,10 +45,13 @@
                         <a href="{% url 'index' %}">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="{% url 'about_us' %}">About</a>
+                    </li>
+                      <li>
+                        <a href="{% url 'contact_us' %}">Contact Us</a>
                     </li>
                     <li>
-                        <a href="post.html">Sample Post</a>
+                        <a href="{% url 'poll_app:index' %}">Second App</a>
                     </li>
                     <li>
                         <a href="{% url 'admin:index' %}">Admin</a>

@@ -1,0 +1,23 @@
+{% extends 'template.html' %}
+{% load staticfiles %}
+
+{% block titleblock %}
+Servay
+{% endblock %}
+
+{% block bodyblock %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ Topic.as_p }}
+    <input type="submit" value="register">
+    </form>
+
+<h2> Hello if you don't added a topic then use the above Section</h2>
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ Topic.as_p }}
+    {{ webpage.as_p }}
+    <input type="submit" value="register">
+    </form>
+
+{% endblock %}

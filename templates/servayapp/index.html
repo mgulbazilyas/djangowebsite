@@ -1,0 +1,13 @@
+{% extends 'template.html' %}
+{% block titleblock %}
+Questions
+{% endblock %}
+
+{% block bodyblock %}
+<div class="carousel-inner -align-justify -arrow-circle-o-down">
+<span>
+    <h2 style=""> Hello This is My Poll App Index Page.</h2>
+</span>
+<a href="{% url 'poll_app:polling' %}">Go to servey Page</a>
+</div>
+{% endblock %}

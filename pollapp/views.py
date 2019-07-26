@@ -5,7 +5,7 @@ from pollapp.forms import UserForm, UserProfileInfoForm
 
 
 def index(request):
-    return render(request,'index.html')
+    return render(request, 'firstapp/index.html')
 
 def register(request):
 
@@ -44,6 +44,11 @@ def register(request):
         'registered':registered
     }
 
-    return render(request,'registration.html',data_dict)
+    return render(request, 'firstapp/registration.html', data_dict)
 
 
+def about_us(request):
+    return render(request,'about.html')
+
+def contact_us(request):
+    return render(request,'contact.html')

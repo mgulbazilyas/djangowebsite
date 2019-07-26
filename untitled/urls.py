@@ -22,7 +22,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('',views.index,name='index'),
     path('admin/', admin.site.urls),
-    path('poll_app/',include('pollapp.urls'))
+    path('registration/',include('pollapp.urls')),
+    path('poll_app/',include('servayapp.urls')),
+    path('contact-us',views.contact_us,name='contact_us'),
+    path('about-us',views.about_us,name='about_us')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
