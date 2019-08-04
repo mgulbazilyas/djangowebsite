@@ -15,17 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from pollapp import views
+from pollapp import views as pollappview
 from untitled import settings
 from django.conf.urls.static import static
-
+import schools
 urlpatterns = [
-    path('',views.index,name='index'),
+    path('',pollappview.index,name='index'),
     path('admin/', admin.site.urls),
     path('registration/',include('pollapp.urls')),
     path('poll_app/',include('servayapp.urls')),
-    path('contact-us',views.contact_us,name='contact_us'),
-    path('about-us',views.about_us,name='about_us')
+    path('contact-us',pollappview.contact_us,name='contact_us'),
+    path('about-us',pollappview.about_us,name='about_us'),
+    path('schools/',include('schools.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
