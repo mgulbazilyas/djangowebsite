@@ -11,13 +11,13 @@ Schools Data
     {% if users %}
         <table class="table table-hover" style="border: 1px solid black;text-align: center;width: 100%">
         <thead class="thead-dark" style="text-align: center">
-        <th>School</th>
-        <th>Subject</th>
-        <th>class size</th>
-        <th>class Number</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
+        <th href="#" onclick="changeurl('school')">School</th>
+        <th href="#" onclick="changeurl('subject')">Subject</th>
+        <th href="#" onclick="changeurl('classsize')">class size</th>
+        <th href="#" onclick="changeurl('classnumber')">class Number</th>
+        <th href="#" onclick="changeurl('first_name')">First Name</th>
+        <th href="#" onclick="changeurl('last_name')">Last Name</th>
+        <th href="#" onclick="changeurl('email')">Email</th>
         </thead>
         {% for i in users %}
         <tr>
@@ -58,6 +58,13 @@ Schools Data
 {% endif %}
 
     <script type="text/javascript">
-    url = window.location.href;
+    function changeurl(name) {
+        window.location = window.location+"&sort="+name;
+    }
     </script>
+    <style>
+    th:hover{
+        background-color: #9d9d9d;
+    }
+    </style>
 {% endblock %}
